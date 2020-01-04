@@ -1,7 +1,5 @@
 var express = require("express");
 var router = express.Router();
-let Todo = require("../models/todo.model");
-let User = require("../models/user.model");
 const TodoController = require("../controllers/todo.controller");
 //Get all
 router.get("/", TodoController.all);

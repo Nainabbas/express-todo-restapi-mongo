@@ -1,3 +1,5 @@
+const User = require("../models/user.model");
+
 module.exports.all = async function(req, res, next) {
   let users = await User.find().populate("todos");
   return res.json(users);

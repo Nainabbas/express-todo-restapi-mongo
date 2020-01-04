@@ -1,3 +1,5 @@
+let Todo = require("../models/todo.model");
+let User = require("../models/user.model");
 module.exports.all = async function(req, res, next) {
   let todos = await Todo.find().populate("user");
   return res.json(todos);
