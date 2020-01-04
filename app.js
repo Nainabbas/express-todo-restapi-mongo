@@ -5,9 +5,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 require("dotenv").config();
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var todosRouter = require("./routes/todos");
+var Router = require("./routes/index");
 
 var app = express();
 
@@ -17,9 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/todos", todosRouter);
+app.use("/", Router);
 
 //________DB Connect____________
 const uri = process.env.DB_URI;
